@@ -1,0 +1,49 @@
+
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+  <div>
+    <main class = "container-fluid">
+  <div class="row  justify-content-center">
+<div class="row row-cols-1 row-cols-md-3 " style="background-color:white;
+    ">
+  {% for plant in plantObj %}
+    
+
+	<!-- Card 1-->
+		<div class="col-lg-4 mb-3 mb-lg-0 px-3 mt-3" 
+		style="height: 500px;">
+		<a href="{% url 'upload' plant.id %}">
+		<div class="d-card card h-100">
+		<div class="hover hover-1 text-white rounded h-100"><img class="h-100" src="{{ plant.display_images.url }}" alt="{{plant.plant_name}}" >
+		 <div class="hover-overlay"></div>
+          <div class="hover-1-content px-5 py-4">
+            <h3 class="hover-1-title text-uppercase font-weight-bold mb-0"> <span class="font-weight-light">{{plant.plant_name}} </span></h3>
+            <p class="hover-1-description font-weight-light mb-0">Tomato si tomata. is Golveda in.
+			Tomato si tomata. is Golveda in.
+			Tomato si tomata. is Golveda in.
+			Tomato si tomata. is Golveda in.</br>
+      </p>
+			<button type="button" class="btn btn-outline-success btn-lg" a href= "{% url 'upload' plant.id %}">Predict</button>
+          </div>
+        </div>
+		</div></a>
+		</div>
+
+    
+                    
+     {% endfor %}
+  </div>
+
+     
+    </main>
+  </div>
+
+
+
+    
+    
+
+
+{% endblock %}

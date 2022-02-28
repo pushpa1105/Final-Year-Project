@@ -1,0 +1,120 @@
+{% extends 'main.html' %} {% load static %} {%block content%}
+<div class="my-team">
+  <h1>Our Team</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4 m-2">
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-head">
+          <img src="{% static "img/pushpa.jpg" %}" class="card-img-top"
+          alt="..." />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Supervisor</h5>
+          <h2 class="card-title">Janak Kumar Lal</h2>
+          <p class="card-text">
+            A Talented, skillful and humble person with good experience. He was
+            responsible to supervise our team of two member and He had been
+            great deal of support to this team. He had been there in every steps
+            and doubt during this project duration.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-head">
+          <img src="{% static "img/pushpa.jpg" %}" class="card-img-top"
+          alt="..." />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">FrontEnd Development</h5>
+          <h2 class="card-title">Pushpa Lama</h2>
+          <p class="card-text">
+            A student at ACHS. He was responsible for FrontEnd works of this
+            project. He designed and developed UI for this project. He was also
+            responsible for data collection and model creation for plant disease
+            detection task.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-head">
+          <div class="card-head">
+            <img src="{% static "img/pushpa.jpg" %}" class="card-img-top"
+            alt="..." />
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">BackEnd Development</h5>
+          <h2 class="card-title">Sijan Acharya</h2>
+          <p class="card-text">
+            A student at ACHS. He was responsible for BackEnd works of this
+            project. He worked on backend,integration and deployment for this
+            project. He was also responsible for data collection and model
+            creation for plant disease detection task.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .my-team {
+    height: 100%;
+  }
+  h1 {
+    font-family: "Dancing Script", cursive !important;
+    font-size: 80px !important;
+    margin-bottom: 30px !important;
+    text-align: center;
+  }
+  .card-head {
+    height: 40%;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto !important;
+    width: 80%;
+    margin-top: 8rem !important;
+    margin-bottom: 2rem !important;
+  }
+  .card img {
+    border-radius: 50%;
+    margin: auto;
+    width: 18rem;
+    height: 18rem;
+    position: relative;
+    top: -5rem;
+    left: 1rem;
+  }
+  .card {
+    width: 20rem;
+  }
+  .card-body,
+  .card-head {
+    background: #d1dfe3;
+  }
+  .card-text {
+    font-family: cursive;
+    font-size: 16px;
+    text-align: center;
+  }
+  h5 {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: cursive;
+    color: #fdfafa;
+  }
+  h2 {
+    color: black;
+    text-align: center !important;
+    font-size: 2rem;
+    font-family: -webkit-body;
+  }
+</style>
+{% endblock %}
