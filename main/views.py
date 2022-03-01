@@ -8,13 +8,12 @@ from keras.preprocessing.image import image, load_img
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input
 import numpy as np
 
-
-
 appleModel = load_model('./models/mdl_wt (2).hdf5')
 grapeModel = load_model('./models/grapemdl_wt.hdf5')
 maizeModel = load_model('./models/maizemdl_wt.hdf5')
 tomatoModel = load_model('./models/tomatomdl_wt.hdf5')
 img_height, img_width = 224,224
+
 
 def news(request):
     return render(request,'main/news.html')

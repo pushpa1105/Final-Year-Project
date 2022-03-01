@@ -18,7 +18,7 @@
       </div>
       <div class="card card1">
         <div class="row justify-content-center my-auto">
-          <div class="col-md-8 col-10 my-5">
+          <div class="col-md-8 col-10 ">
             <form
               action=""
               method="POST"
@@ -41,9 +41,18 @@
     .card0 {
       height: 30rem !important;
     }
-    .card0 .d-flex{
+    @media only screen and (max-width: 500px) {
+      .card .card1{
+        padding-bottom: 3rem;
+      }
+    }
+    @media only screen and (min-width: 992px) {
+      .card0 .d-flex{
       height:100%;
     }
+    }
+
+
   </style>
 
  
