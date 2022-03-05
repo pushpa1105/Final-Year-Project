@@ -1,5 +1,5 @@
 {% extends 'main.html' %} {% load static %} {%block content%}
-<h1>News</h1>
+<h3>News</h3>
 <div class="news">
   <div
     class="card mb-3"
@@ -83,4 +83,19 @@
     </div>
   </div>
 </div>
+<style>
+  .news img{
+    width: 100%;
+    height: auto;
+  }
+  h3{
+    text-align: center;
+    color: white;
+    font-family: cursive;
+  }
+ .card-text a{
+    color: 609d03 !important;
+    text-decoration: none;
+  }
+</style>
 {% endblock %}

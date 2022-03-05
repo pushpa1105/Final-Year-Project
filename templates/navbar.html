@@ -1,103 +1,17 @@
-<div class="container-fluid p-0 m-0">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light stroke">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Paluwa </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarText"
-        aria-controls="navbarText"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              href="{% url 'main' %}"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'news' %}">Information</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'calendar' %}">Garden Calendar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'ourTeam' %}">Our Team</a>
-          </li>
-        </ul>
-        <span class="navbar-text"> Predict disease in your crop </span>
-      </div>
-    </div>
-  </nav>
+<div class="header">
+  <div class="logo">
+  <h1>PALUWA</h1>
+  </div>
+  <input type="checkbox" class="Menu-bar" id="Menu-bar"/>
+  <label for="Menu-bar" class="Bar">
+    <span class="Bars"></span>  
+  </label>
+<nav>
+  <ul>
+    <li><a href="{% url 'main' %}">Home</a></li>
+    <li><a href="{% url 'news' %}">Information</a></li>
+    <li><a href="{% url 'calendar' %}">Calendar</a></li>
+    <li><a href="{% url 'ourTeam' %}">Our Team</a></li>
+  </ul>
+</nav>
 </div>
-
-<style>
-  body {
-    font-family: "Roboto", sans-serif;
-    padding: 0;
-    margin: 0;
-  }
-
-  .center {
-    text-align: center;
-  }
-  .navbar {
-    box-shadow: 2px 2px 2px 2px #e5e0e0;
-  }
-  nav ul {
-    list-style: none;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  nav ul li a {
-    display: block;
-    text-decoration: none;
-    color: #0da636;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin: 0 10px;
-  }
-
-  nav ul li a,
-  nav ul li a:after,
-  nav ul li a:before {
-    transition: all 0.5s;
-  }
-  nav ul li a:hover {
-    color: #454d47;
-  }
-
-  <!--/* stroke */ -->
-nav.stroke ul li a {
-    position: relative;
-  }
-  nav.stroke ul li a:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 0%;
-    content: ".";
-    color: transparent;
-    background: #454d47;
-    height: 1px;
-  }
-  nav.stroke ul li a:hover:after {
-    width: 100%;
-  }
-
-  a {
-    color: #0da636;
-    text-decoration: none;
-  }
-</style>

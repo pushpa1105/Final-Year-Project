@@ -1,217 +1,759 @@
 {% extends 'main.html' %} {% load static %} {%block content%}
-<h1>Seasonal Crop Calendar of Nepal</h1>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-3">
+<h1 class="text-white">Seasonal Crop Calendar of Nepal</h1>
+<div class="container-fluid mb-4">
+  
+  
       <div class="list-group">
         <a
-          href="{% url 'calendar' %}"
-          class="list-group-item list-group-item-action active"
+          class="list-group-item list-group-item-action hover-1 "
           aria-current="true"
+          data-bs-toggle="collapse" 
+          href="#collapseExampleSummer" 
+          role="button" 
+          aria-expanded="false" 
+          aria-controls="collapseExampleSummer"
         >
-          <div class="d-flex w-100 justify-content-between">
+          
             <h5 class="mb-1">Summer Season</h5>
-          </div>
+         
           <p class="mb-1">Summer is hottest season of Nepal.</p>
           <small class="text-muted"><bold>(May-August)</bold></small>
         </a>
-        <a
-          href="{% url 'calendarMonsoon' %}"
-          class="list-group-item list-group-item-action"
-        >
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Monsoon Season</h5>
+        <div class="collapse" id="collapseExampleSummer">
+  
+          <div class="list-group f-w">
+            <p>
+              <a
+                class="list-group-item list-group-item-primary"
+                data-bs-toggle="collapse"
+                href="#collapseExample6"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample6"
+              >
+                Paddy - धान
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample6">
+              <div class="card card-body">
+                Paddy(धान) is the most important crop in Nepal in terms of both
+                planted area and production. It is chiefly grown under wet
+                conditions in the monsoon season, while in some areas it is also
+                grown during the spring season. It is grown in three agro-ecological
+                zones, namely the Terai, mid-hills and high hills.
+              </div>
+              <div class="card card-body">
+                <h3>How to grow Paddy(धान)?</h3>
+                <a
+                  href="https://ricepedia.org/rice-as-a-crop/how-is-rice-grown"
+                  target="_blank"
+                  >Visit this site</a
+                >
+              </div>
+            </div>
+    
+            <p>
+              <a
+                class="list-group-item list-group-item-secondary"
+                data-bs-toggle="collapse"
+                href="#collapseExample1"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample1"
+              >
+                Maize - मकै
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample1">
+              <div class="card card-body">
+                Maize is an integral crop of the hill farming system and is the
+                second most important crop of Nepal. In the terai, inner-terai,
+                valleys, and low-lying river basin areas, maize is also grown in the
+                winter and spring with irrigation. Among the survey districts,
+                Sankhuwasabha, Sindhupalchok and Bajhang are in the highhills;
+                Panchthar, Nuwakot, Lamjung, Baglung, Pyuthan, Salyan, Dailekh,
+                Achham, and Baitadi are in the midhills; Udayapur and Dang are in
+                the inner- terai; and Jhapa, Bara and Bardia are in the terai5.
+              </div>
+              <div class="card card-body">
+                <h3>How to grow Maize (मकै)?</h3>
+                <a
+                  href="https://www.fwi.co.uk/livestock/step-step-guide-planting-maize"
+                  target="_blank"
+                  >Visit this site</a
+                >
+              </div>
+            </div>
+    
+            <p>
+              <a
+                class="list-group-item list-group-item-success"
+                data-bs-toggle="collapse"
+                href="#collapseExample2"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample2"
+              >
+                Millet - कोदो
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample2">
+              <div class="card card-body">
+                Millet is the second most important crop of Nepal. A variety of
+                millets, including Kodo (finger millet), Junelo (sorghum millet),
+                Kaguno (foxtail millet), Chino (proso millet) are grown across
+                different agro-climatic zones in Nepal. Baglung district of Gandaki
+                Province has the largest area and production under finger millet in
+                Nepal. The highest productivity of finger millet is found in Udaypur
+                (1.97 mt/ha) followed by Panchthar (1.97 mt/ha) and Okhaldhunga
+                districts (1.97 mt/ha)
+              </div>
+              <div class="card card-body">
+                <h3>How to grow Millet (कोदो)?</h3>
+                <a href="https://www.wikihow.com/Grow-Millet" target="_blank"
+                  >Visit this site</a
+                >
+              </div>
+            </div>
+            <p>
+              <a
+                class="list-group-item list-group-item-danger"
+                data-bs-toggle="collapse"
+                href="#collapseExample3"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample3"
+              >
+                Buckwheat - अनाज
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample3">
+              <div class="card card-body">
+                Sweet buckwheat varieties are generally grown in midhill and Terai
+                but Tartary buckwheat varieties are grown in higher altitude. There
+                are altogether 19 local landraces of sweat buckwheat and 37 for
+                Tartary buckwheat listed from Nepal
+              </div>
+              <div class="card card-body">
+                <h3>How to grow Buckwheat (अनाज)?</h3>
+                <a
+                  href="https://www.growjourney.com/grow-buckwheat/"
+                  target="_blank"
+                  >Visit this site</a
+                >
+              </div>
+            </div>
           </div>
+        
+      </div>
+        <a
+        data-bs-toggle="collapse" 
+        href="#collapseExampleMoonsoon" 
+        role="button" 
+        aria-expanded="false" 
+        aria-controls="collapseExampleMoonsoon"
+          class="list-group-item list-group-item-action hover-1"
+        >
+          
+            <h5 class="mb-1">Monsoon Season</h5>
+          
           <p class="mb-1">
             Moonsoon days are warm (up to 30°C), wet and with high humidity.
           </p>
           <small class="text-muted">(June-August)</small>
         </a>
+          
+  <div class="collapse" id="collapseExampleMoonsoon">
+   
+    <div class="list-group f-w">
+      <p>
         <a
-          href="{% url 'calendarSpring' %}"
-          class="list-group-item list-group-item-action"
+          class="list-group-item list-group-item-primary"
+          data-bs-toggle="collapse"
+          href="#collapseExample6"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample6"
         >
-          <div class="d-flex w-100 justify-content-between">
+          Jute - जुट
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample6">
+        <div class="card card-body">
+          Nepal ranks 5th in raw jute production globally.Morang district is
+          leading the raw jute production followed by Sunsari, Jhapa, Saptari,
+          Siraha, and Ilam.
+        </div>
+        <div class="card card-body">
+          <h3>How to grow Jute (जुट)?</h3>
+          <a
+            href="https://agriculturistmusa.com/how-to-grow-jute/"
+            target="_blank"
+            >Visit this site</a
+          >
+        </div>
+      </div>
+
+      <p>
+        <a
+          class="list-group-item list-group-item-secondary"
+          data-bs-toggle="collapse"
+          href="#collapseExample1"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample1"
+        >
+          Cotton - कपास
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample1">
+        <div class="card card-body">
+          Cotton can be grown is Banke, Bardiya, Kailali, Kanchnpur, Dang and
+          Dote irrespective of irrigation facility. The area has annual
+          rainfall of between 1000-1500 mm and the crop season lasts from June
+          to December.
+        </div>
+        <div class="card card-body">
+          <h3>How to grow Cotton (कपास)?</h3>
+          <a href="https://morningchores.com/growing-cotton/" target="_blank"
+            >Visit this site</a
+          >
+        </div>
+      </div>
+
+      <p>
+        <a
+          class="list-group-item list-group-item-success"
+          data-bs-toggle="collapse"
+          href="#collapseExample2"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample2"
+        >
+          Cardamom - अलैंची
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample2">
+        <div class="card card-body">
+          Large cardamom is grown predominantly in Eastern Nepal where four
+          districts Taplejung, Panchthar, Ilam, and Sankhuwasabha account for
+          more than 80% of national production.
+        </div>
+        <div class="card card-body">
+          <h3>How to grow Cardamom (अलैंची)?</h3>
+          <a
+            href="https://gardenerspath.com/plants/herbs/grow-cardamom/"
+            target="_blank"
+            >Visit this site</a
+          >
+        </div>
+      </div>
+      <p>
+        <a
+          class="list-group-item list-group-item-danger"
+          data-bs-toggle="collapse"
+          href="#collapseExample3"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample3"
+        >
+          Tomato - टमाटर
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample3">
+        <div class="card card-body">
+          Some popular tomato varieties among farmers in Nepal are Abinash,
+          Allrounder, Trishul, Sirjana, Shamjhana, Dhanalaxmi Indira, Roma,
+          Pusa Ruby, NBL-1, and others. Among them, Srijana, Samjhana, NBL-1,
+          Allrounder, and Pusa Ruby are the most popular varieties in Central
+          Development Region of the country.
+        </div>
+        <div class="card card-body">
+          <h3>How to grow Tomato (टमाटर)?</h3>
+          <a href="https://www.almanac.com/plant/tomatoes" target="_blank"
+            >Visit this site</a
+          >
+        </div>
+      </div>
+    </div>
+  
+</div>
+        <a
+        data-bs-toggle="collapse" 
+        href="#collapseExampleSpring" 
+        role="button" 
+        aria-expanded="false" 
+        aria-controls="collapseExampleSpring"
+          class="list-group-item list-group-item-action hover-1"
+        >
+         
             <h5 class="mb-1">Spring Season</h5>
-          </div>
+          
           <p class="mb-1">
             This season offers the best time to visit the beautiful country of
             Nepa.
           </p>
           <small class="text-muted">( March - May)</small>
         </a>
-        <a
-          href="{% url 'calendarAutumn' %}"
-          class="list-group-item list-group-item-action"
-        >
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Autumn Season</h5>
+        <div class="collapse" id="collapseExampleSpring">
+     
+          <div class="list-group f-w">
+            <p>
+              <a
+                class="list-group-item list-group-item-primary"
+                data-bs-toggle="collapse"
+                href="#collapseExample6"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample6"
+              >
+                Ginger - अदुवा
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample6">
+              <div class="card card-body">
+                Ginger farming is one of the main sources of cash income for the
+                small farmers of the mid-hills in Nepal. The low-lying plains of the
+                Morang district in southeastern Nepal should be the perfect place
+                for growing ginger. The weather is warm, the soil moist. And yet
+                farmers there have been routinely losing up to 90 per cent of their
+                ginger crops
+              </div>
+              <div class="card card-body">
+                <h3>How to grow Ginger (अदुवा)?</h3>
+                <a href="https://farmingmethod.com/grow-ginger/" target="_blank"
+                  >Visit this site</a
+                >
+              </div>
+            </div>
+    
+            <p>
+              <a
+                class="list-group-item list-group-item-secondary"
+                data-bs-toggle="collapse"
+                href="#collapseExample1"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample1"
+              >
+                Tea - चिया
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample1">
+              <div class="card card-body">
+                There are six major districts, primarily in the eastern regions of
+                Nepal that are known for producing quality orthodox tea, which are
+                Ilam, Panchthar, Dhankuta, Terhathum, Sindhulpalchok and Kaski.
+                Nepal grows mainly 3 types of Tea, i.e. Camelia asamica and C.
+                asamica spp lasiocalyx for CTC and Camellia sinesis for Orthodox
+                Tea.
+              </div>
+              <div class="card card-body">
+                <h3>How to grow Tea (चिया)?</h3>
+                <a
+                  href="https://www.lovethegarden.com/uk-en/article/how-grow-tea"
+                  target="_blank"
+                  >Visit this site</a
+                >
+              </div>
+            </div>
+    
+            <p>
+              <a
+                class="list-group-item list-group-item-success"
+                data-bs-toggle="collapse"
+                href="#collapseExample2"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample2"
+              >
+                Millet - कोदो
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample2">
+              <div class="card card-body">
+                Millet is the second most important crop of Nepal. A variety of
+                millets, including Kodo (finger millet), Junelo (sorghum millet),
+                Kaguno (foxtail millet), Chino (proso millet) are grown across
+                different agro-climatic zones in Nepal. Baglung district of Gandaki
+                Province has the largest area and production under finger millet in
+                Nepal. The highest productivity of finger millet is found in Udaypur
+                (1.97 mt/ha) followed by Panchthar (1.97 mt/ha) and Okhaldhunga
+                districts (1.97 mt/ha)
+              </div>
+              <div class="card card-body">
+                <h3>How to grow Millet (कोदो)?</h3>
+                <a href="https://www.wikihow.com/Grow-Millet" target="_blank"
+                  >Visit this site</a
+                >
+              </div>
+            </div>
+            <p>
+              <a
+                class="list-group-item list-group-item-danger"
+                data-bs-toggle="collapse"
+                href="#collapseExample3"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample3"
+              >
+                Buckwheat - अनाज
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample3">
+              <div class="card card-body">
+                Sweet buckwheat varieties are generally grown in midhill and Terai
+                but Tartary buckwheat varieties are grown in higher altitude. There
+                are altogether 19 local landraces of sweat buckwheat and 37 for
+                Tartary buckwheat listed from Nepal
+              </div>
+              <div class="card card-body">
+                <h3>How to grow Buckwheat (अनाज)?</h3>
+                <a
+                  href="https://www.growjourney.com/grow-buckwheat/"
+                  target="_blank"
+                  >Visit this site</a
+                >
+              </div>
+            </div>
           </div>
+        
+      </div>
+        <a
+        data-bs-toggle="collapse" 
+        href="#collapseExampleAutumn" 
+        role="button" 
+        aria-expanded="false" 
+        aria-controls="collapseExampleAutumn"
+          class="list-group-item list-group-item-action hover-1"
+        >
+        
+            <h5 class="mb-1">Autumn Season</h5>
+          
           <p class="mb-1">
             Little cold weather, clean mountains during night, warm and clear
             days, and clouds start to appear in the afternoon.
           </p>
           <small class="text-muted">(Mid-September - November)</small>
         </a>
-        <a
-          href="{% url 'calendarWinter' %}"
-          class="list-group-item list-group-item-action"
-        >
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Winter Season</h5>
+        <div class="collapse" id="collapseExampleAutumn">
+    
+          <div class="list-group f-w">
+            <p>
+              <a
+                class="list-group-item list-group-item-primary"
+                data-bs-toggle="collapse"
+                href="#collapseExample6"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample6"
+              >
+                Potato - आलु
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample6">
+              <div class="card card-body">
+                The potato is now Nepal's second staple food crop, after
+                rice.Potatoes are widely grown in Nepal, at below 100 m altitude in
+                the south to as high as 4 000 m in the northern mountains.
+              </div>
+              <div class="card card-body">
+                <h3>How to grow Potato (आलु)?</h3>
+                <a
+                  href="https://www.gardendesign.com/vegetables/potatoes.html"
+                  target="_blank"
+                  >Visit this site</a
+                >
+              </div>
+            </div>
+    
+            <p>
+              <a
+                class="list-group-item list-group-item-secondary"
+                data-bs-toggle="collapse"
+                href="#collapseExample1"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample1"
+              >
+                Apple - स्याऊ
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample1">
+              <div class="card card-body">
+                There are districts such as Manang, Kalikot, Humla and others ,
+                especially in the mountainous north-west of Nepal, where apples
+                grow. The harvest season in Jumla is from August to October. In some
+                apple-producing districts, the harvest is from September to
+                mid-December.
+              </div>
+              <div class="card card-body">
+                <h3>How to grow Apple (स्याऊ)?</h3>
+                <a href="https://www.almanac.com/plant/apples" target="_blank"
+                  >Visit this site</a
+                >
+              </div>
+            </div>
+    
+            <p>
+              <a
+                class="list-group-item list-group-item-success"
+                data-bs-toggle="collapse"
+                href="#collapseExample2"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample2"
+              >
+                Millet - कोदो
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample2">
+              <div class="card card-body">
+                Millet is the second most important crop of Nepal. A variety of
+                millets, including Kodo (finger millet), Junelo (sorghum millet),
+                Kaguno (foxtail millet), Chino (proso millet) are grown across
+                different agro-climatic zones in Nepal. Baglung district of Gandaki
+                Province has the largest area and production under finger millet in
+                Nepal. The highest productivity of finger millet is found in Udaypur
+                (1.97 mt/ha) followed by Panchthar (1.97 mt/ha) and Okhaldhunga
+                districts (1.97 mt/ha)
+              </div>
+              <div class="card card-body">
+                <h3>How to grow Millet (कोदो)?</h3>
+                <a href="https://www.wikihow.com/Grow-Millet" target="_blank"
+                  >Visit this site</a
+                >
+              </div>
+            </div>
+            <p>
+              <a
+                class="list-group-item list-group-item-danger"
+                data-bs-toggle="collapse"
+                href="#collapseExample3"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample3"
+              >
+                Buckwheat - अनाज
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample3">
+              <div class="card card-body">
+                Sweet buckwheat varieties are generally grown in midhill and Terai
+                but Tartary buckwheat varieties are grown in higher altitude. There
+                are altogether 19 local landraces of sweat buckwheat and 37 for
+                Tartary buckwheat listed from Nepal
+              </div>
+              <div class="card card-body">
+                <h3>How to grow Buckwheat (अनाज)?</h3>
+                <a
+                  href="https://www.growjourney.com/grow-buckwheat/"
+                  target="_blank"
+                  >Visit this site</a
+                >
+              </div>
+            </div>
           </div>
+        
+        </div>
+        <a
+        data-bs-toggle="collapse" 
+        href="#collapseExampleWinter" 
+        role="button" 
+        aria-expanded="false" 
+        aria-controls="collapseExampleWinter"
+          class="list-group-item list-group-item-action hover-1"
+        >
+         
+            <h5 class="mb-1">Winter Season</h5>
+          
           <p class="mb-1">Winter is coldest season of Nepal</p>
           <small class="text-muted">(Late-November - February)</small>
         </a>
-      </div>
-    </div>
-    <div class="col-sm-9">
-      <div class="list-group">
-        <p>
-          <a
-            class="list-group-item list-group-item-primary"
-            data-bs-toggle="collapse"
-            href="#collapseExample6"
-            role="button"
-            aria-expanded="false"
-            aria-controls="collapseExample6"
-          >
-            Paddy - धान
-          </a>
-        </p>
-        <div class="collapse" id="collapseExample6">
-          <div class="card card-body">
-            Paddy(धान) is the most important crop in Nepal in terms of both
-            planted area and production. It is chiefly grown under wet
-            conditions in the monsoon season, while in some areas it is also
-            grown during the spring season. It is grown in three agro-ecological
-            zones, namely the Terai, mid-hills and high hills.
-          </div>
-          <div class="card card-body">
-            <h3>How to grow Paddy(धान)?</h3>
+  
+    <div class="collapse" id="collapseExampleWinter">
+      
+        <div class="list-group f-w">
+          <p>
             <a
-              href="https://ricepedia.org/rice-as-a-crop/how-is-rice-grown"
-              target="_blank"
-              >Visit this site</a
+              class="list-group-item list-group-item-primary"
+              data-bs-toggle="collapse"
+              href="#collapseExample6"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample6"
             >
+              Lentil - दाल
+            </a>
+          </p>
+          <div class="collapse" id="collapseExample6">
+            <div class="card card-body">
+              Lentil(दाल) is grown in the Terai, Inner Terai and mid-hills and
+              constitutes 60% of the total grain legume area and production.
+              Lentil is the fourth most important cool season crop of Nepal shares
+              60% in area and 65% in production of total legumes.
+            </div>
+            <div class="card card-body">
+              <h3>How to grow Lentil(दाल)?</h3>
+              <a
+                href="https://harvesttotable.com/how_to_grow_lentil/"
+                target="_blank"
+                >Visit this site</a
+              >
+            </div>
           </div>
-        </div>
-
-        <p>
-          <a
-            class="list-group-item list-group-item-secondary"
-            data-bs-toggle="collapse"
-            href="#collapseExample1"
-            role="button"
-            aria-expanded="false"
-            aria-controls="collapseExample1"
-          >
-            Maize - मकै
-          </a>
-        </p>
-        <div class="collapse" id="collapseExample1">
-          <div class="card card-body">
-            Maize is an integral crop of the hill farming system and is the
-            second most important crop of Nepal. In the terai, inner-terai,
-            valleys, and low-lying river basin areas, maize is also grown in the
-            winter and spring with irrigation. Among the survey districts,
-            Sankhuwasabha, Sindhupalchok and Bajhang are in the highhills;
-            Panchthar, Nuwakot, Lamjung, Baglung, Pyuthan, Salyan, Dailekh,
-            Achham, and Baitadi are in the midhills; Udayapur and Dang are in
-            the inner- terai; and Jhapa, Bara and Bardia are in the terai5.
-          </div>
-          <div class="card card-body">
-            <h3>How to grow Maize (मकै)?</h3>
+  
+          <p>
             <a
-              href="https://www.fwi.co.uk/livestock/step-step-guide-planting-maize"
-              target="_blank"
-              >Visit this site</a
+              class="list-group-item list-group-item-secondary"
+              data-bs-toggle="collapse"
+              href="#collapseExample1"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample1"
             >
+              Mustard - तोरी
+            </a>
+          </p>
+          <div class="collapse" id="collapseExample1">
+            <div class="card card-body">
+              Nepal is one of the world's second-largest Mustard manufacturing
+              countries. Similarly, it assembles almost 143 thousand tonnes a
+              year. Chitwan is famous in Nepal for mustard growing and production
+              of mustard oil.
+            </div>
+            <div class="card card-body">
+              <h3>How to grow Mustard (तोरी)?</h3>
+              <a
+                href="https://harvesttotable.com/how_to_grow_mustard/"
+                target="_blank"
+                >Visit this site</a
+              >
+            </div>
           </div>
-        </div>
-
-        <p>
-          <a
-            class="list-group-item list-group-item-success"
-            data-bs-toggle="collapse"
-            href="#collapseExample2"
-            role="button"
-            aria-expanded="false"
-            aria-controls="collapseExample2"
-          >
-            Millet - कोदो
-          </a>
-        </p>
-        <div class="collapse" id="collapseExample2">
-          <div class="card card-body">
-            Millet is the second most important crop of Nepal. A variety of
-            millets, including Kodo (finger millet), Junelo (sorghum millet),
-            Kaguno (foxtail millet), Chino (proso millet) are grown across
-            different agro-climatic zones in Nepal. Baglung district of Gandaki
-            Province has the largest area and production under finger millet in
-            Nepal. The highest productivity of finger millet is found in Udaypur
-            (1.97 mt/ha) followed by Panchthar (1.97 mt/ha) and Okhaldhunga
-            districts (1.97 mt/ha)
-          </div>
-          <div class="card card-body">
-            <h3>How to grow Millet (कोदो)?</h3>
-            <a href="https://www.wikihow.com/Grow-Millet" target="_blank"
-              >Visit this site</a
-            >
-          </div>
-        </div>
-        <p>
-          <a
-            class="list-group-item list-group-item-danger"
-            data-bs-toggle="collapse"
-            href="#collapseExample3"
-            role="button"
-            aria-expanded="false"
-            aria-controls="collapseExample3"
-          >
-            Buckwheat - अनाज
-          </a>
-        </p>
-        <div class="collapse" id="collapseExample3">
-          <div class="card card-body">
-            Sweet buckwheat varieties are generally grown in midhill and Terai
-            but Tartary buckwheat varieties are grown in higher altitude. There
-            are altogether 19 local landraces of sweat buckwheat and 37 for
-            Tartary buckwheat listed from Nepal
-          </div>
-          <div class="card card-body">
-            <h3>How to grow Buckwheat (अनाज)?</h3>
+  
+          <p>
             <a
-              href="https://www.growjourney.com/grow-buckwheat/"
-              target="_blank"
-              >Visit this site</a
+              class="list-group-item list-group-item-success"
+              data-bs-toggle="collapse"
+              href="#collapseExample2"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample2"
             >
+              Sugarcane - उखु
+            </a>
+          </p>
+          <div class="collapse" id="collapseExample2">
+            <div class="card card-body">
+              Sugarcane is the largest commercial cash crop cultivated in Nepal.
+              Out of Nepal's 75 districts, five (Mahottari, Sarlahi, Rautahat,
+              Nawalparasi and Kapilbastu) are the major sugarcane cultivation
+              districts.
+            </div>
+            <div class="card card-body">
+              <h3>How to grow Sugarcane (उखु)?</h3>
+              <a
+                href="https://www.epicgardening.com/how-to-grow-sugar-cane/#:~:text=Lay%20your%20cutting%20horizontally%20on,also%20be%20rooted%20in%20water."
+                target="_blank"
+                >Visit this site</a
+              >
+            </div>
+          </div>
+          <p>
+            <a
+              class="list-group-item list-group-item-danger"
+              data-bs-toggle="collapse"
+              href="#collapseExample3"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample3"
+            >
+              Barley - जौ
+            </a>
+          </p>
+          <div class="collapse" id="collapseExample3">
+            <div class="card card-body">
+              Barley is one of the major food crops in high hill region of Nepal.
+              Naked barley is a traditional, climate-resilient and highly
+              nutritious crop of the high mountains of Nepal.
+            </div>
+            <div class="card card-body">
+              <h3>How to grow Barley (जौ)?</h3>
+              <a
+                href="http://www.heirloom-organics.com/guide/va/guidetogrowingbarley.html"
+                target="_blank"
+                >Visit this site</a
+              >
+            </div>
+          </div>
+          <p>
+            <a
+              class="list-group-item list-group-item-danger"
+              data-bs-toggle="collapse"
+              href="#collapseExample3"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample3"
+            >
+              Coffee - कफी
+            </a>
+          </p>
+          <div class="collapse" id="collapseExample3">
+            <div class="card card-body">
+              Coffee is grown in 42 districts in Nepal. Gulmi, Arghakhanchi,
+              Pyuthan, Palpa and Syangja are the largest coffee producers. In
+              addition, coffee plantation is expanding as commercial farming in 21
+              districts of mid-hill areas of central and western region.
+            </div>
+            <div class="card card-body">
+              <h3>How to grow Coffee (कफी)?</h3>
+              <a
+                href="https://www.agrifarming.in/coffee-growing-information-beginners"
+                target="_blank"
+                >Visit this site</a
+              >
+            </div>
           </div>
         </div>
-      </div>
+      
     </div>
   </div>
 </div>
 <style>
+  .list-group .hover-1 {
+    transition: .3s linear;
+  }
+  .list-group .hover-1:hover{
+    background: #1a1e23;
+    color: white;
+    border: none;
+    transform: rotateY(15deg);
+  box-shadow: 0 15px 15px #f8faf8;
+  }
+  .list-group{
+    margin: auto;
+    width: 75%;
+    
+  }
+  .list-group p{
+    margin: 0;
+  }
   .container {
     margin: 1rem;
   }
-  .col-sm-3 {
-    margin-bottom: 1rem;
+  .f-w{
+    text-align: center;
+    margin-top:1rem;
+    width: 92%;
   }
-  .col-sm-9 p {
-    margin: 0;
+  .f-w a{
     height: 4rem;
   }
   .collapse {
     margin-bottom: 1rem;
   }
 
-  .col-sm-9 .list-group-item {
-    height: 100%;
-    text-align: center;
-    padding-top: 1rem;
-    font-size: 2rem;
-  }
+ 
 </style>
 {% endblock %}

@@ -1,62 +1,111 @@
 {% extends 'main.html' %} {% load static %} {%block content%}
 
 <div class="upload-page">
-<div class="container px-4 py-5 mx-auto">
-  <div class="card card0">
-    <div class="d-flex flex-lg-row flex-column-reverse">
-      <div class="card card2">
-        <div class="my-auto mx-md-5 px-md-5 right">
-          <h3 class="text-white">Things to know</h3>
-          <small class="text-white">
-            <ul type="square">
-              <li>Only image file must be uploaded.</li>
-              <li>Only picture of leaf part must be uploaded.</li>
-              <li>Make sure you are uploading picture of selected plant.</li>
-            </ul>
-          </small>
+  <div class="container px-4 py-5 mx-auto">
+    <div class="card card0">
+      <div class="d-flex flex-lg-row flex-column-reverse">
+        <div class="card card2">
+          <div class="my-auto mx-md-5 px-md-5 right">
+            <h2 class="text-white text-center">Things to know</h2>
+            <small class="text-white">
+              <ul type="square">
+                <li>Only image file must be uploaded.</li>
+                <li>Only picture of leaf part must be uploaded.</li>
+                <li>Make sure you are uploading picture of selected plant.</li>
+                <li>Use picture taken with no filter or excessive lighting. </li>
+              </ul>
+            </small>
+          </div>
         </div>
-      </div>
-      <div class="card card1">
-        <div class="row justify-content-center my-auto">
-          <div class="col-md-8 col-10 ">
-            <form
-              action=""
-              method="POST"
-              enctype="multipart/form-data"
-              class="was-validated"
-              value="{{pk}}"
-            >
-              {% csrf_token %}
-              <input type="file" accept="image/*" name="imagePath" placeholder="Select" id="image-file" class="form-control" required/>
-              <div class="invalid-feedback">Please choose a image</div>
-              <input type="submit" class="btn-submit-img" />
-            </form>
+        <div class="card card1">
+          <div class="row justify-content-center my-auto">
+            <div class="col-md-8 col-10 ">
+              <form
+                action=""
+                method="POST"
+                enctype="multipart/form-data"
+                class="was-validated"
+                value="{{pk}}"
+              >
+                {% csrf_token %}
+                <input type="file" accept="image/*" name="imagePath" placeholder="Select" id="image-file" class="form-control" required/>
+                <div class="invalid-feedback">Please choose a image</div>
+                <input type="submit" class="btn-submit-img" id="upload_btl"/>
+                
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    </div>
+    <script>
+      $("#image-file").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+      });
+      
+      
+      document.getElementById('upload_btl').onclick = function (){
+        var image=document.getElementById('image-file').value;
+            if(image!=''){
+              var checkimg = image.toLowerCase();
+              if(!checkimg.match(/(\.jpg|\.png|\.JPG|\.PNG|\.jpeg|\.JPEG)$/)){
+                 alert("Please Choose an image"); 
+                 document.getElementById('image-file').value="";
+              }
+             
+            }
+      
+      }
+      
+      </script>
+    <style>
+      .upload-page ul{
+        list-style: square !important ;
+        font-size: 1rem !important;
+      }
+      .card0 {
+        height: 30rem !important;
+        width: 100% !important;
+      }
+      @media only screen and (max-width: 500px) {
+        .card .card1{
+          padding-bottom: 3rem;
+        }
+        .card0{
+          height: 100% !important;
+        }
+      }
+      @media only screen and (min-width: 992px) {
+        .card0 .d-flex{
+        height:100%;
+      }
+      }
+  
+  
+    </style>
+  
+   
   </div>
   </div>
-  <style>
-    .card0 {
-      height: 30rem !important;
-    }
-    @media only screen and (max-width: 500px) {
-      .card .card1{
-        padding-bottom: 3rem;
+<script>
+  function fileValidate(){
+    var inputFile=document.getElementById('image-file');
+    var filePath=inputFile.value;
+    var allowedExtensions=/(\.jpg|\.jpeg|\.png)$/i;
+    if(!allowedExtensions.exec(filePath)){
+      alert('Please upload an image!!!');
+      inputFile.value='';
+      return false;
+    }else{
+      if(inputFile.files && inputFile.files[0]){
+        var reader=new FileReader();
+        reader.onload=function(e){
+          document.getElementById('image-preview').innerHTML='<img src="'+e.target.result+'"/>';
+        }
+        reader.readAsDataURL(inputFile.files(0));
       }
     }
-    @media only screen and (min-width: 992px) {
-      .card0 .d-flex{
-      height:100%;
-    }
-    }
-
-
-  </style>
-
- 
-</div>
-</div>
-
+  }
+  </script>
 {% endblock %}

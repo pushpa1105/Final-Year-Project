@@ -45,29 +45,38 @@ def upload(request, pk):
     if request.method == 'POST':        
         fs = FileSystemStorage()
         fileObj = request.FILES['imagePath']
-        filePathName = fs.save(fileObj.name,fileObj) 
-        testimage = '.' +'/static/images/' + filePathName
-        filePathName = fs.url(filePathName)
-        img = load_img(testimage, target_size=(224,224))
-        img_tensor = image.img_to_array(img)
-        img_tensor1 = np.expand_dims(img_tensor, axis=0)
-        img_tensor2 = preprocess_input(img_tensor1)
-        plantname = str(plants.objects.get(id = pk)).lower()
-        disease = ''
-        if plantname == 'apple':
-            disease = preAppleDisase(img_tensor2)
-        elif plantname == 'maize':
-            disease = preMaizeDisease(img_tensor2)
-        elif plantname == 'grape':
-            disease = preGrapeDisease(img_tensor2)
-        elif plantname == 'tomato':
-            disease = preTomatoDisease(img_tensor2)
-
-        fs.delete(testimage)
-        return HttpResponse(disease)
+        if fileObj == None:
+            return HttpResponse("no any file found")
+        else:
+            filePathName = fs.save(fileObj.name,fileObj) 
+            testimage = '.' +'/static/images/' + filePathName
+            filePathName = fs.url(filePathName)
+            img = load_img(testimage, target_size=(224,224))
+            img_tensor = image.img_to_array(img)
+            img_tensor1 = np.expand_dims(img_tensor, axis=0)
+            img_tensor2 = preprocess_input(img_tensor1)
+            plantname = str(plants.objects.get(id = pk)).lower()
+            disease = ''
+            if plantname == 'apple':
+                disease = preAppleDisase(img_tensor2)
+            elif plantname == 'maize':
+                disease = preMaizeDisease(img_tensor2)
+            elif plantname == 'grape':
+                disease = preGrapeDisease(img_tensor2)
+            elif plantname == 'tomato':
+                disease = preTomatoDisease(img_tensor2)
+            context = {
+                'plantname' : plantname,
+                'disease': disease,
+                'filePathName' : filePathName,
+            }
+            return render(request,'main/result.html', context)
+            
+        
     else:
-        return render(request,'main/upload.html')
-
+        plantname = str(plants.objects.get(id = pk)).lower()
+        context = {'plantname':plantname}
+        return render(request,'main/upload.html',context)
 
 def preAppleDisase(imgTensor):
     class_list = [
