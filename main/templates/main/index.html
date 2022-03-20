@@ -15,7 +15,7 @@
           <img src="{{ plant.display_images.url }}" alt="">
           
         </li>
-        <li class="btn-predict"><button>Predict</button></li>
+        <li class="btn-predict"><button onclick="window.location.href=`{% url 'upload' plant.id %}`">Predict</button></li>
        <a href="{% url 'upload' plant.id %}">
 
        <li class="item-label">{{plant.plant_name}}</li>
