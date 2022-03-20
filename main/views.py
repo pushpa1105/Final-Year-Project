@@ -2,13 +2,12 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 from .models import plants
+from .models import news
 import tensorflow as tf
 from keras.models import load_model
 from keras.preprocessing.image import image, load_img
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input
 import numpy as np
-
-
 
 appleModel = load_model('./models/mdl_wt (2).hdf5')
 grapeModel = load_model('./models/grapemdl_wt.hdf5')
@@ -16,8 +15,12 @@ maizeModel = load_model('./models/maizemdl_wt.hdf5')
 tomatoModel = load_model('./models/tomatomdl_wt.hdf5')
 img_height, img_width = 224,224
 
-def news(request):
-    return render(request,'main/news.html')
+
+def new(request):
+    newsObj = news.objects.all()
+    context = {'newsObj':newsObj}
+    return render(request,'main/news.html',context)
+
 def calendar(request):
      return render(request, 'main/calendar.html')
 
@@ -46,29 +49,38 @@ def upload(request, pk):
     if request.method == 'POST':        
         fs = FileSystemStorage()
         fileObj = request.FILES['imagePath']
-        filePathName = fs.save(fileObj.name,fileObj) 
-        testimage = '.' +'/static/images/' + filePathName
-        filePathName = fs.url(filePathName)
-        img = load_img(testimage, target_size=(224,224))
-        img_tensor = image.img_to_array(img)
-        img_tensor1 = np.expand_dims(img_tensor, axis=0)
-        img_tensor2 = preprocess_input(img_tensor1)
-        plantname = str(plants.objects.get(id = pk)).lower()
-        disease = ''
-        if plantname == 'apple':
-            disease = preAppleDisase(img_tensor2)
-        elif plantname == 'maize':
-            disease = preMaizeDisease(img_tensor2)
-        elif plantname == 'grape':
-            disease = preGrapeDisease(img_tensor2)
-        elif plantname == 'tomato':
-            disease = preTomatoDisease(img_tensor2)
-
-        fs.delete(testimage)
-        return HttpResponse(disease)
+        if fileObj == None:
+            return HttpResponse("no any file found")
+        else:
+            filePathName = fs.save(fileObj.name,fileObj) 
+            testimage = '.' +'/static/images/' + filePathName
+            filePathName = fs.url(filePathName)
+            img = load_img(testimage, target_size=(224,224))
+            img_tensor = image.img_to_array(img)
+            img_tensor1 = np.expand_dims(img_tensor, axis=0)
+            img_tensor2 = preprocess_input(img_tensor1)
+            plantname = str(plants.objects.get(id = pk)).lower()
+            disease = ''
+            if plantname == 'apple':
+                disease = preAppleDisase(img_tensor2)
+            elif plantname == 'maize':
+                disease = preMaizeDisease(img_tensor2)
+            elif plantname == 'grape':
+                disease = preGrapeDisease(img_tensor2)
+            elif plantname == 'tomato':
+                disease = preTomatoDisease(img_tensor2)
+            context = {
+                'plantname' : plantname,
+                'disease': disease,
+                'filePathName' : filePathName,
+            }
+            return render(request,'main/result.html', context)
+            
+        
     else:
-        return render(request,'main/upload.html')
-
+        plantname = str(plants.objects.get(id = pk)).lower()
+        context = {'plantname':plantname}
+        return render(request,'main/upload.html',context)
 
 def preAppleDisase(imgTensor):
     class_list = [

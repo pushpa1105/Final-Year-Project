@@ -79,6 +79,7 @@ body {
 }
 a {
   color: #369;
+  text-decoration: none !important;
 }
 
 p {
@@ -122,7 +123,7 @@ p {
 @media screen and (max-width: 768px) {
   .container {
     padding: 10px !important;
-    margin-top: 8rem;
+    
   }
 
   .card2 {
