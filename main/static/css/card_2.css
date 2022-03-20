@@ -162,6 +162,9 @@ footer{
   body{
     margin:0;
   }
+  .header h1{
+    font-size: 1.9rem !important;
+  }
   .header .logo{
     display: block;
     top:-10;
@@ -192,7 +195,7 @@ footer{
   .Bar{
     cursor: pointer;
     float: right;
-    padding: 40px 20px;
+    padding: 15px 20px;
   }
   .Bars{
     background: White;
@@ -232,6 +235,10 @@ footer{
 .Menu-bar:checked ~ .Bar .Bars::after {
     transform: rotate(45deg);
     top:0;
+}
+
+.logo{
+  height: 1rem;
 }
 
 }

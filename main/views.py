@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 from .models import plants
+from .models import news
 import tensorflow as tf
 from keras.models import load_model
 from keras.preprocessing.image import image, load_img
@@ -15,8 +16,11 @@ tomatoModel = load_model('./models/tomatomdl_wt.hdf5')
 img_height, img_width = 224,224
 
 
-def news(request):
-    return render(request,'main/news.html')
+def new(request):
+    newsObj = news.objects.all()
+    context = {'newsObj':newsObj}
+    return render(request,'main/news.html',context)
+
 def calendar(request):
      return render(request, 'main/calendar.html')
 

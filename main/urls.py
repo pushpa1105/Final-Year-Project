@@ -7,6 +7,6 @@ urlpatterns = [
     path('upload/<str:pk>', views.upload, name = 'upload'),
     path('calendar/', views.calendar, name='calendar'),
     path('ourTeam/', views.ourTeam, name='ourTeam'),
-    path('news/',views.news, name='news'),
+    path('news/',views.new, name='news'),
 
 ]

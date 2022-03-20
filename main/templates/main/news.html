@@ -1,6 +1,13 @@
 {% extends 'main.html' %} {% load static %} {%block content%}
-<h3>News</h3>
+<h3>Information</h3>
+
 <div class="news">
+  {% for news in newsObj %}
+  <a
+  style="color: black;"
+  href="{{ news.urlField}}"
+  target="_blank"
+>
   <div
     class="card mb-3"
     style="
@@ -11,77 +18,40 @@
       box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
     "
   >
+  
+  
+  
     <div class="row g-0">
+     
       <div class="col-md-4">
         <img
-          src="https://www.lutheranworld.org/sites/default/files/styles/news_item/public/nepal-agro-digital-anil_0.jpg?itok=j6LrJkql"
+          src="{{ news.images.url }}"
           class="img-fluid rounded-start"
           alt="..."
         />
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">
-            Nepal: New mobile application helps local farmers innovate
+          <h5 class="card-title mb-3" style="font-family: fantasy;">
+            {{ news.title }}
           </h5>
           <p class="card-text">
-            (LWI) - The Lutheran World Federation (LWF) is supporting farmers in
-            Nepal with an agricultural app in a revolutionary effort to increase
-            access to technical support and provide guidance on sustainable
-            practices that will assist local farmers in expanding their
-            livelihoods.
+            {{ news.description }}
           </p>
           <p class="card-text">
-            <a
-              href="https://www.lutheranworld.org/news/nepal-new-mobile-application-helps-local-farmers-innovate"
-              target="_blank"
-            >
-              Go to Site</a
-            >
+           
+              
           </p>
         </div>
       </div>
+     
     </div>
+    
   </div>
-  <div
-    class="card mb-3"
-    style="
-      width: 90%;
-      margin: auto;
-      padding: 1rem;
-      background: #edd6d6;
-      box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
-    "
-  >
-    <div class="row g-0">
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">
-            Climate change is a disaster in the Nepal Himalaya
-          </h5>
-          <p class="card-text">
-            Floods, a declining yarsagumba crop and collapse of trekking combine
-            to impoverish farmers in Nepal’s remotest district
-          </p>
-          <p class="card-text">
-            <a
-              href="https://www.nepalitimes.com/banner/climate-change-is-a-disaster-in-the-nepal-himalaya/"
-              target="_blank"
-              >Go to Site</a
+  </a
             >
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <img
-          src="https://www.nepalitimes.com/wp-content/uploads/2021/10/Climate-change-and-women-in-Dolpo-Nepal-NT-1.jpg"
-          class="img-fluid rounded-start"
-          alt="..."
-          style="float: right"
-        />
-      </div>
-    </div>
-  </div>
+  {% endfor %}
+  
 </div>
 <style>
   .news img{

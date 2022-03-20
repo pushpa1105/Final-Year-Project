@@ -19,3 +19,12 @@ class predict(models.Model):
     name = models.CharField(max_length = 50, null = True, blank = True)
     disease = models.CharField(max_length = 50, null = True, blank = True)
     
+class news(models.Model):
+    title = models.CharField(max_length = 100, null = False)
+    id = models.UUIDField(default = uuid.uuid4, unique = True, primary_key = True, editable= False)
+    images = models.ImageField(null = False, blank = True, default = 'default_images' )
+    description = models.TextField(null = True, blank = True)
+    urlField = models.URLField(max_length=250)
+    
+    def __str__(self):
+        return self.title
